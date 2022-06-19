@@ -1,0 +1,40 @@
+.nav_logo {
+    height: 80px;
+    margin: 0 85% 0 0;
+}
+
+.logo_container{
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+    
+}
+
+.nav{
+    display: flex;
+    flex-direction: row;
+    grid-row: 1;
+    background-color:aliceblue;
+    
+}
+
+.menu_container{
+    display: flex;
+    align-items: center;
+}
+
+.menu_icon{
+    margin: 0 0 0 15px;
+}
+
+.navi{
+    margin: 0 10px 0 10px;
+    height: 30px;
+}
+
+.nav_directory {
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    
+}
