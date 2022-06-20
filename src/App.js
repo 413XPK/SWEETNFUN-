@@ -1,13 +1,17 @@
 import './App.css';
-import Nav from './Nav'
+import Navbar from './Navbar/Nav.js'
+
+import { HashRouter, Route, Switch } from 'react-router-dom'
+
 function App() {
   return (
+    <HashRouter>
     //BEM convention
     <div className="app">
-      {/* <h1>Hello</h1> */}
-      < Nav />
+      < Navbar />
       {/* Home */}
     </div>
+    </HashRouter>
   );
 }
 
