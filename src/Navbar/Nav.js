@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
-import ReactDOM from 'react-dom/client';
-
+import React from 'react';
+// import ReactDOM from 'react-dom/client';
 import useStyles from './styles'
+
 import logo from '../imgs/SNF.png';
 import products from '../imgs/icons/products.png';
 import about from '../imgs/icons/about.png';
@@ -16,32 +16,35 @@ const Navbar = () => {
 
   const styles = useStyles();
 
+  const [showCategories, setShowCategories] = React.useState(false)
+  const [showMenu, setShowMenu] = React.useState(false)
+  const onClick = () => setShowCategories(true)  
+  const onClick2 = () => setShowMenu(true)
+  return (
 
-    return (
-
-    <div className="nav">
-      <div className='basic_menu'>
-        <a className="menu_container">
+    <div className={styles.nav}>
+      <div className={styles.basic_menu}>
+        <a className={styles.menu_container}>
           <img src={menu} className={styles.menu_icon} alt=""/>
         </a>
 
-        <a className={styles["logo_container"]}>
+        <a className={styles.logo_container}>
           <img src={logo} className={styles.nav_logo}  alt="snf logo"/>
         </a>
       </div>
 
-      <div className='nav_menu_container'> 
+      <div className={styles.nav_menu_container}> 
 
-        <div className={styles['titles']}>
-          <a className={styles['title_categories']}>Categories</a>
-          <a onClick={()=> this.operation()} className={styles['title_directory']}>Menu</a>
+        <div className={styles.titles}>
+          <a onClick={onClick} className={styles.title_categories}>Categories</a>
+          <a onClick={onClick2} className={styles.title_directory}>Menu</a>
         </div>
         {
-          this.state.show?
+          showCategories?
         
-          <div className={styles['nav_categories']}>
+          <div className={styles.nav_categories}>
 
-            <div className={styles['menu_categories']}>
+            <div className={styles.menu_categories}>
               <ul>
                 <li><a>Roi Pop</a></li>
                 <hr/>
@@ -74,38 +77,40 @@ const Navbar = () => {
           </div>  
           :null
         }
-        <div className={styles["nav_directory"]}>
+        {
+        showMenu?
+        <div className={styles.nav_directory}>
 
-          <div className={styles['menu_directory']}>
+          <div className={styles.menu_directory}>
             <a>
-              <img src={products} className={styles["navi products"]}/>
+              <img src={products} style={{"height" : "30px"}} className={[styles.navi,styles.products]}/>
               <p>All Products</p>
             </a>
             <a>
-              <img src={about} className={styles["navi about"]}/>
+              <img src={about} className={[styles.navi,styles.about]}/>
               <p>About us</p>
             </a>
             <a>
-              <img src={contact} className={styles["navi contact_us"]}/>
+              <img src={contact} className={[styles.navi,styles.contact_us]}/>
               <p>Contact us</p>
             </a>
             <a>
-              <img src={blog} className={styles["navi blog"]}/>
+              <img src={blog} className={[styles.navi,styles.blog]}/>
               <p>Blog</p>
             </a>
             <a>
-              <img src={search} className={styles["navi search"]}/>
+              <img src={search} className={[styles.navi,styles.search]}/>
               <p>Search</p>
             </a>
             <a>
-              <img src={profile} className={styles["navi profile"]}/>
+              <img src={profile} className={[styles.navi,styles.profile]}/>
               <p>Profile</p>
             </a>
           </div>
         </div>
 
-        
-
+        :null
+        }
       </div>
     </div>
   );

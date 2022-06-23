@@ -2,9 +2,7 @@ import {makeStyles } from '@material-ui/core/styles'
 
 export default makeStyles((theme) => ({
 
-ul:{
-    listStyle: 'none'
-},
+
 
 /* essential nav bar elements */
 nav_logo: {
@@ -49,8 +47,8 @@ nav_directory:{
 },
 
 navi:{
+    height: '30px !important',
     margin: '0 10px 0 10px',
-    height: '30px',
 
     contact_us:{
         width: '29px'
@@ -62,7 +60,7 @@ navi:{
 
 
 
-/* popout navigation menu */
+// popout navigation menu 
 nav_menu_container:{
     backgroundColor:'bisque',
     width: '240px',
@@ -95,15 +93,19 @@ menu_categories:{
     flexDirection: 'column',
     backgroundColor: 'antiquewhite',
     width: '240px',
-    
+        
     a:{
         display: 'flex',
         padding: '5px'
     },
     hr:{
-        /* width: 50vw; */
+        width: '50vw',
         marginLeft: '-40px'
-    }
+    },
+    li:{
+        listStyle: 'none',
+    
+    },
 },
 
 
@@ -116,15 +118,20 @@ title_directory:{
 },
 
 menu_directory:{
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    menu_directory:{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    
 
     a:{
         display: 'flex',
         padding: '5px',  
-        alignItems: 'center'
-    } 
+        alignItems: 'center',
+        height: '30px !important',
+    }
+    
 },
 
 
