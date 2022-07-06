@@ -1,19 +1,18 @@
-import React from 'react'
+import React from 'react';
 
 import './App.css';
-import Navbar from './Navbar/Nav.js'
-import { HashRouter, Route, Switch } from 'react-router-dom'
+import Navbar from './components/Navbar/Nav.js';
+import Home from './components/Home/Home.js';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 
 const App = () => (
-
-    <HashRouter>
+  <HashRouter>
     {/* //BEM convention */}
     <div className="app">
-      < Navbar />
-      {/* Home */}
+      <Navbar />
+      <Home />
     </div>
-    </HashRouter>
-  
-)
-  
+  </HashRouter>
+);
+
 export default App;
