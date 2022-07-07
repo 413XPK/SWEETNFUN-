@@ -1,12 +1,13 @@
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
-import './styles';
+import useStyles from './styles';
 
 import first from '../../imgs/banners/1.jpg';
 import second from '../../imgs/banners/2.jpg';
 import third from '../../imgs/banners/3.jpg';
 
-export default () => (
+const Home = () => {
+  const styles = useStyles();
   <Carousel
     // autoPlay
     // infiniteLoop
@@ -34,17 +35,19 @@ export default () => (
     }}
   >
     <div>
-      <a className="first_blur"></a>
-      <img src={first} className="initial" />
+      <a className={styles.first_blur}></a>
+      <img src={first} className={styles.initial} />
       {/* <p className="legend">Legend 1</p> */}
     </div>
     <div>
-      <img src={second} className="secondary" />
+      <img src={second} className={styles.secondary} />
       {/* <p className="legend">Legend 2</p> */}
     </div>
     <div>
-      <img src={third} className="tertiary" />
+      <img src={third} className={styles.tertiary} />
       {/* <p className="legend">Legend 3</p> */}
     </div>
-  </Carousel>
-);
+  </Carousel>;
+};
+
+export default Home;
