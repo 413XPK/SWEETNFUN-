@@ -11,6 +11,11 @@ export default makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     gridRow: '1',
+    backgroundColor: 'transparent',
+    position: 'absolute',
+    zIndex: '10',
+    width: '100%',
+    marginBottom: '100px',
   },
 
   basic_menu: {
