@@ -15,7 +15,6 @@ export default makeStyles((theme) => ({
     position: 'absolute',
     zIndex: '10',
     width: '100%',
-    marginBottom: '100px',
   },
 
   basic_menu: {

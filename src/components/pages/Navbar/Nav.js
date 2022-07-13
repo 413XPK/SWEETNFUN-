@@ -1,14 +1,14 @@
 import React from 'react';
 
 import useStyles from './styles';
-import logo from '../../imgs/SNF.png';
-import products from '../../imgs/icons/products.png';
-import about from '../../imgs/icons/about.png';
-import contact from '../../imgs/icons/contact.png';
-import blog from '../../imgs/icons/blog.png';
-import search from '../../imgs/icons/search.png';
-import profile from '../../imgs/icons/profile.png';
-import menu from '../../imgs/icons/menu-rounded.png';
+import logo from '../../../imgs/SNF.png';
+import products from '../../../imgs/icons/products.png';
+import about from '../../../imgs/icons/about.png';
+import contact from '../../../imgs/icons/contact.png';
+import blog from '../../../imgs/icons/blog.png';
+import search from '../../../imgs/icons/search.png';
+import profile from '../../../imgs/icons/profile.png';
+import menu from '../../../imgs/icons/menu-rounded.png';
 
 const Navbar = () => {
   const styles = useStyles();
