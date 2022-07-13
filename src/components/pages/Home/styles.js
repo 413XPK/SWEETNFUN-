@@ -81,18 +81,4 @@ export default makeStyles(() => ({
     position: 'absolute',
   },
   //carousel end //
-
-  //popular products start //
-
-  body_header: {
-    color: 'pink',
-    display: 'flex',
-    justifyContent: 'center',
-    marginTop: '50px',
-  },
-  pop: {
-    color: 'red',
-  },
-
-  //popular products end //
 }));

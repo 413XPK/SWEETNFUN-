@@ -8,7 +8,7 @@ import logo from '../../imgs/logo_2.png';
 import second from '../../imgs/banners/2.jpg';
 import third from '../../imgs/banners/3.jpg';
 
-const HeroBanner = () => {
+const HeroBanner = ({ bannerData }) => {
   const styles = useStyles();
 
   return (

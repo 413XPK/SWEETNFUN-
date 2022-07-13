@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
 import useStyles from './styles';
 
 import { client } from '../../../utilities/client';
@@ -7,11 +8,29 @@ import HeroBanner from '../../HeroBanner/HeroBanner.js';
 const Home = ({ bannerData, products }) => {
   const styles = useStyles();
 
+  const [prodData, setData] = useState(null);
+
+  useEffect(() => {
+    const query = `*[_type == "product"]`;
+    const products = client
+      .fetch(query)
+      .then((data) => setData(data))
+      .catch(console.error);
+
+    const bannerQuery = `*[_type == "banner"]`;
+    const bannerData = client
+      .fetch(bannerQuery)
+      .fetch(query)
+      .then((data) => setData(data))
+      .catch(console.error);
+
+    return {
+      props: { products, bannerData },
+    };
+  });
   return (
     <>
-      <div>
-        <HeroBanner heroBanner={bannerData.length && bannerData} />
-      </div>
+      <HeroBanner heroBanner={bannerData.length && bannerData} />
 
       <div>
         <h1 className={styles.body_header}>
@@ -25,16 +44,16 @@ const Home = ({ bannerData, products }) => {
   );
 };
 
-export const getServerSideProps = async () => {
-  const query = '*[_type == "product"]';
-  const products = await client.fetch(query);
+// export const getServerSideProps = async () => {
+//   const query = '*[_type == "product"]';
+//   const products = await client.fetch(query);
 
-  const bannerQuery = '*[_type == "banner"]';
-  const bannerData = await client.fetch(bannerQuery);
+//   const bannerQuery = '*[_type == "banner"]';
+//   const bannerData = await client.fetch(bannerQuery);
 
-  return {
-    props: { products, bannerData },
-  };
-};
+//   return {
+//     props: { products, bannerData },
+//   };
+// };
 
 export default Home;
